@@ -84,29 +84,81 @@ export const generatePlayableHTML = (design: GameDesign): string => {
       -webkit-tap-highlight-color: transparent;
     }
 
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
     body {
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
       background: #2a2a3e;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-      overflow: hidden;
+      touch-action: none;
+    }
+
+    #game-wrapper {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     #game-container {
       position: relative;
       width: ${design.config.width}px;
       height: ${design.config.height}px;
+      max-width: 100vw;
+      max-height: 100vh;
       background-color: ${design.config.backgroundColor};
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
       overflow: hidden;
       touch-action: none;
     }
 
-    @media (max-width: ${design.config.width}px) {
+    /* Responsive scaling - maintains aspect ratio */
+    @media (max-width: ${design.config.width}px), (max-height: ${design.config.height}px) {
       #game-container {
-        transform: scale(0.9);
+        width: 100vw;
+        height: calc(100vw * ${design.config.height / design.config.width});
+      }
+
+      /* If height exceeds viewport, scale by height instead */
+      @supports (height: 100dvh) {
+        #game-container {
+          max-height: 100dvh;
+        }
+      }
+    }
+
+    @media (max-height: ${design.config.height}px) and (min-width: ${design.config.width}px) {
+      #game-container {
+        width: calc(100vh * ${design.config.width / design.config.height});
+        height: 100vh;
+      }
+    }
+
+    /* Mobile-specific optimizations */
+    @media (max-width: 768px) {
+      #game-container {
+        width: 100vw;
+        height: calc(100vw * ${design.config.height / design.config.width});
+        max-height: 100vh;
+      }
+    }
+
+    /* Landscape mobile */
+    @media (max-height: 500px) and (orientation: landscape) {
+      #game-container {
+        width: auto;
+        height: 100vh;
+        max-width: calc(100vh * ${design.config.width / design.config.height});
       }
     }
 
@@ -219,18 +271,20 @@ export const generatePlayableHTML = (design: GameDesign): string => {
   </style>
 </head>
 <body>
-  <div id="game-container">
-    <div id="game-ui">
-      <div>Score: <span id="score">0</span></div>
-    </div>
+  <div id="game-wrapper">
+    <div id="game-container">
+      <div id="game-ui">
+        <div>Score: <span id="score">0</span></div>
+      </div>
 
-    <div id="game-over">
-      <h2 id="game-result">You Win! 🎉</h2>
-      <p id="game-score">Final Score: 0</p>
-      <button onclick="location.reload()">Play Again</button>
-    </div>
+      <div id="game-over">
+        <h2 id="game-result">You Win! 🎉</h2>
+        <p id="game-score">Final Score: 0</p>
+        <button onclick="location.reload()">Play Again</button>
+      </div>
 
 ${elementsHTML}
+    </div>
   </div>
 
   <script>

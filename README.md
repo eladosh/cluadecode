@@ -1,62 +1,64 @@
 # 🎮 Playable Ad Builder
 
-A powerful visual builder specifically designed for creating playable ad game mechanics and layouts. Design interactive game experiences with an intuitive drag-and-drop interface, professional animations, and export them as **network-optimized playable ads** for 15+ major ad platforms.
+A **mobile-first** visual builder for creating responsive playable ad game mechanics. Design interactive game experiences with drag-and-drop, professional animations, and export as **fully responsive, network-optimized** playable ads for 15+ platforms.
 
-## ✨ Key Features
+## ✨ Mobile-First & Responsive
 
-### 🌐 Multi-Network Export (NEW!)
-**Build for 15+ Ad Networks with One Click!**
+### 📱 Designed for Mobile Devices
+- **Default size: 640x960** (optimized for mobile portrait)
+- **Fully responsive** - automatically scales to fit any screen
+- **Maintains aspect ratio** on all devices
+- **Touch-optimized** interactions
+- **Works perfectly** on phones, tablets, and desktop
 
-Powered by [@smoud/playable-scripts](https://github.com/smoudjs/playable-scripts), export optimized playable ads for:
+### 🔄 Responsive Features
+- Automatic viewport scaling
+- Aspect ratio preservation
+- Portrait & landscape support
+- Fullscreen mobile display
+- No manual scaling needed
 
-**Major Networks:**
-- Google Ads (AdMob, Google Ad Manager)
-- Meta (Facebook Audience Network)
-- Unity Ads
-- AppLovin MAX
-- ironSource (Unity LevelPlay)
+## 🌐 Multi-Network Export
 
-**Standard Networks:**
-- Vungle, Mintegral, Moloco, Chartboost
-- TikTok For Business, Snapchat Ads
+Build for **15+ Ad Networks** with one click!
 
-**More Networks:**
-- Pangle, Tapjoy, AdColony, and more!
+**Supported Networks:**
+- Google Ads, Facebook/Meta, Unity Ads
+- AppLovin, ironSource, Vungle
+- TikTok, Snapchat, Mintegral
+- Chartboost, Moloco, and more!
 
 **Features:**
-- ✅ Automatic network-specific optimizations
-- ✅ MRAID/DAPI protocol injection
-- ✅ File size optimization & minification
-- ✅ ZIP archive generation
-- ✅ Build metadata & configuration
+- Network-specific optimizations
+- MRAID/DAPI protocol injection
+- File size optimization
+- ZIP packaging
 
-### 📱 Pre-Built Templates
-- **5 Professional Templates** for common ad mechanics
-- Tap to Collect, Avoid & Reach, Puzzle Match, Endless Runner, Blank Mobile
-- One-click loading with full customization
+## 🎨 Key Features
 
-### 🎨 Visual Design Tools
+### Pre-Built Templates (Mobile-Optimized)
+- 5 professional templates at 640x960
+- Tap to Collect, Avoid & Reach, Puzzle Match
+- Endless Runner, Blank Mobile
+- All templates fully responsive
+
+### Visual Design Tools
 - Drag-and-drop interface
-- Real-time canvas editing with zoom/pan
-- **Snap-to-grid** for perfect alignment
-- Multiple element types (buttons, CTA, targets, obstacles, shapes, text, images)
-- Layer ordering system
+- Snap-to-grid alignment
+- Multiple element types
+- Real-time preview
+- Mobile frame preview
 
-### 🎬 Professional Animations
-- 6 CSS animations: Bounce, Pulse, Shake, Float, Spin, Glow
-- Per-element configuration
-- Adjustable duration (0.5-10 seconds)
+### Professional Animations
+- 6 CSS animations (bounce, pulse, shake, float, spin, glow)
+- Configurable duration
+- Performance-optimized
 
-### 🔗 CTA Integration
-- Dedicated CTA button element
-- App Store/Play Store URL linking
-- Pre-configured glow animation
+### CTA Integration
+- Dedicated CTA buttons
+- App Store linking
 - Touch-optimized
-
-### 📱 Mobile-First Design
-- Mobile device preview frame
-- Common ad size presets
-- Touch-optimized export
+- Glow animations
 
 ## 🚀 Getting Started
 
@@ -68,168 +70,139 @@ npm install
 npm run dev
 ```
 
+## 📱 Mobile-First Canvas Sizes
+
+**Recommended (Mobile):**
+- **640x960** - Default mobile portrait (recommended)
+- **320x480** - Small mobile devices
+- **750x1334** - iPhone 6/7/8
+- **1080x1920** - Full HD mobile
+
+**Desktop/Landscape:**
+- 800x600 - Standard desktop
+- 1024x768 - Large desktop
+
 ## 📖 Usage Guide
 
-### Building for Ad Networks
+### Quick Start
 
-1. **Design Your Ad** - Use templates or create from scratch
-2. **Add Elements** - Drag and drop game elements
-3. **Add Animations** - Make it engaging!
-4. **Configure CTA** - Set your app store URL in Canvas Settings
-5. **Click "Build for Networks"** - Purple button (bottom-left)
-6. **Select Network** - Choose your target ad platform
-7. **Build & Download** - Get optimized ZIP file
+1. **Design Your Ad** (default 640x960 mobile size)
+2. **Add Elements** - Drag and drop
+3. **Add Animations** - Make it engaging
+4. **Configure CTA** - Set app store URL
+5. **Preview** - Test on mobile frame
+6. **Build for Networks** - Export optimized files
 
-### Supported Build Configurations
+### Responsive Export
 
-Each network build includes:
-- Network-specific HTML optimizations
-- Protocol injection (MRAID/DAPI if needed)
-- Automatic minification
-- Metadata files
-- ZIP packaging (when supported)
+All exported playable ads are **fully responsive**:
+- Automatically fit any screen size
+- Maintain aspect ratio
+- Work on mobile, tablet, desktop
+- No letterboxing or stretching
+- Perfect for all ad networks
 
-### Network-Specific Notes
+### Network-Specific Builds
 
-**Google Ads:**
-- Supports ZIP export
-- No protocol needed
-- Auto-adds ad.size meta tag
+1. Click "Build for Networks" (purple button)
+2. Select target network
+3. Configure build settings
+4. Download optimized ZIP
 
-**Facebook/Meta:**
-- Supports ZIP export
-- Includes fbapp-config.json
-- og:type meta tag added
+**Each build includes:**
+- Responsive HTML/CSS
+- Network-specific optimizations
+- Protocol injection (if needed)
+- Minification & compression
 
-**Unity Ads / AppLovin / ironSource:**
-- MRAID protocol injected
-- ZIP export supported
-- Network-specific meta tags
+## 💡 Pro Tips
 
-**TikTok / Snapchat:**
-- Direct HTML export
-- No protocol needed
-- Platform-specific optimizations
+### For Mobile-First Design
 
-## 📦 Export Options
+1. **Use Default Size** - 640x960 works for most mobile ads
+2. **Test Mobile Frame** - Toggle to see phone preview
+3. **Large Touch Targets** - Minimum 60x60px for buttons
+4. **Vertical Layout** - Design for portrait orientation
+5. **Safe Zones** - Keep important content away from edges
 
-### 1. Standard HTML Export
-Click the green HTML button in toolbar for standalone playable HTML.
+### For Responsive Ads
 
-### 2. Network-Specific Build
-Click "Build for Networks" for optimized, network-ready packages:
-- Minified & optimized HTML
-- Network-specific adaptations
-- Protocol injection (MRAID/DAPI)
-- ZIP archive with metadata
-- File size warnings
+- Designs automatically scale to fit screens
+- Aspect ratio always maintained
+- Works on any device size
+- No additional configuration needed
+- Test in mobile frame preview
+
+### File Size Tips
+
+- Keep ads under 2MB for network compliance
+- Use solid colors instead of images
+- Enable minification in network builds
+- Monitor size warnings
+
+## 🎯 Responsive Technology
+
+### Viewport Meta Tags
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+```
+
+### Responsive CSS
+- Automatic scaling based on screen size
+- Aspect ratio calculations
+- Media queries for mobile/desktop
+- Landscape mode support
+- Touch-action optimization
+
+### Mobile Optimizations
+- Touch event handling
+- Fullscreen display
+- No scroll/zoom
+- Hardware acceleration
+- 60fps animations
+
+## 📊 Canvas Size Reference
+
+| Size | Device | Orientation | Use Case |
+|------|--------|-------------|----------|
+| 640x960 | Mobile | Portrait | **Default** |
+| 320x480 | Small Mobile | Portrait | Compact |
+| 750x1334 | iPhone | Portrait | iOS |
+| 1080x1920 | HD Mobile | Portrait | Premium |
+| 800x600 | Desktop | Landscape | Web |
 
 ## 🛠️ Technology Stack
 
 - React 18 + TypeScript
 - Vite + Tailwind CSS
-- Zustand (state management)
-- [@smoud/playable-scripts](https://github.com/smoudjs/playable-scripts) - Network builds
-- JSZip - Archive generation
-- Lucide Icons
+- Zustand (state)
+- @smoud/playable-scripts (network builds)
+- JSZip (packaging)
+- Responsive CSS with media queries
 
-## 💡 Pro Tips
+## 🎮 Perfect for Playable Ads
 
-### For Network Builds
-
-1. **Keep File Size Low** - Most networks limit to 2-5MB
-   - Monitor size warnings
-   - Optimize images before importing
-   - Use solid colors when possible
-
-2. **Test Multiple Networks** - Build for your target platforms
-   - Each network has specific requirements
-   - Test in preview mode first
-   - Download network-specific builds
-
-3. **Set Store URLs** - Configure in Canvas Settings
-   - Used for CTA buttons
-   - Included in network builds
-   - Required for some platforms
-
-4. **Use Correct Canvas Size**
-   - 800x600 - Standard desktop
-   - 320x480 - Mobile portrait
-   - 640x960 - Large mobile
-   - 750x1334 - iPhone standard
-
-5. **MRAID Support** - Auto-injected for:
-   - Unity Ads
-   - AppLovin
-   - ironSource
-   - Vungle
-   - Most standard networks
-
-## 📋 Supported Networks Reference
-
-| Network | Protocol | ZIP | Category |
-|---------|----------|-----|----------|
-| Google Ads | none | ✅ | Major |
-| Facebook | none | ✅ | Major |
-| Unity Ads | MRAID | ✅ | Major |
-| AppLovin | MRAID | ✅ | Major |
-| ironSource | MRAID | ✅ | Major |
-| Vungle | MRAID | ✅ | Standard |
-| Mintegral | MRAID | ✅ | Standard |
-| Moloco | MRAID | ✅ | Standard |
-| Chartboost | MRAID | ✅ | Standard |
-| TikTok | none | ✅ | Standard |
-| Snapchat | none | ✅ | Standard |
-| Pangle | none | ✅ | Other |
-| Tapjoy | MRAID | ✅ | Other |
-| AdColony | MRAID | ✅ | Other |
-| Preview | none | ❌ | Test |
-
-## 🔧 File Structure
-
-```
-playable-ad-builder/
-├── src/
-│   ├── components/
-│   │   ├── Canvas.tsx           # Main workspace
-│   │   ├── Toolbar.tsx          # Tools & controls
-│   │   ├── NetworkSelector.tsx  # Network build UI ⭐
-│   │   ├── TemplatesPanel.tsx   # Template browser
-│   │   └── ...
-│   ├── types/
-│   │   └── networks.ts          # Network configurations ⭐
-│   ├── utils/
-│   │   ├── export.ts            # HTML generation
-│   │   └── networkBuilder.ts    # Network-specific builds ⭐
-│   └── data/
-│       └── templates.ts         # Pre-built templates
-└── package.json                  # Includes @smoud/playable-scripts
-```
-
-## 🎯 Perfect for Playable Ads
-
-This builder is production-ready with everything you need:
-- ✅ Multi-network export (15+ platforms)
-- ✅ Network-specific optimizations
-- ✅ MRAID/DAPI support
-- ✅ File size monitoring
-- ✅ Professional templates
-- ✅ Animation system
-- ✅ CTA integration
-- ✅ Mobile-optimized
+✅ Mobile-first design
+✅ Fully responsive output
+✅ 15+ network support
+✅ Touch-optimized
+✅ Automatic scaling
+✅ Aspect ratio preserved
+✅ Professional animations
+✅ CTA integration
+✅ File size monitoring
 
 ## 📚 Resources
 
-- **smoudjs/playable-scripts:** [GitHub](https://github.com/smoudjs/playable-scripts) | [npm](https://www.npmjs.com/package/@smoud/playable-scripts)
-- **smoudjs/playable-sdk:** [GitHub](https://github.com/smoudjs/playable-sdk) | [npm](https://www.npmjs.com/package/@smoud/playable-sdk)
-- **MRAID Specification:** [IAB Tech Lab](https://www.iab.com/guidelines/mraid/)
+- **smoudjs:** [GitHub](https://github.com/smoudjs/playable-scripts)
+- **MRAID Spec:** [IAB Tech Lab](https://www.iab.com/guidelines/mraid/)
 
 ## 📄 License
 
-MIT License - Free for commercial and personal use!
+MIT License - Free for commercial use!
 
 ---
 
-**Built for game marketers and playable ad creators** 🎯
+**Built for mobile-first playable ads** 📱
 
-Create professional, network-ready playable ads in minutes!
+Create responsive, network-ready playable ads that work perfectly on any device!

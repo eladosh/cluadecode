@@ -137,8 +137,39 @@ export const ConfigPanel: React.FC = () => {
         </div>
 
         <div className="pt-2 border-t border-gray-700 text-xs text-gray-400">
-          <p>📱 Common playable ad sizes:</p>
-          <div className="flex gap-2 mt-2 flex-wrap">
+          <p className="font-semibold mb-2">📱 Mobile-First Ad Sizes (Recommended):</p>
+          <div className="grid grid-cols-2 gap-2 mb-3">
+            <button
+              onClick={() => updateConfig({ width: 640, height: 960 })}
+              className="px-3 py-2 bg-blue-600 hover:bg-blue-700 rounded text-xs font-medium"
+            >
+              640x960
+              <div className="text-[10px] opacity-80">Default Mobile</div>
+            </button>
+            <button
+              onClick={() => updateConfig({ width: 320, height: 480 })}
+              className="px-3 py-2 bg-blue-600 hover:bg-blue-700 rounded text-xs font-medium"
+            >
+              320x480
+              <div className="text-[10px] opacity-80">Small Mobile</div>
+            </button>
+            <button
+              onClick={() => updateConfig({ width: 750, height: 1334 })}
+              className="px-3 py-2 bg-blue-600 hover:bg-blue-700 rounded text-xs font-medium"
+            >
+              750x1334
+              <div className="text-[10px] opacity-80">iPhone 6/7/8</div>
+            </button>
+            <button
+              onClick={() => updateConfig({ width: 1080, height: 1920 })}
+              className="px-3 py-2 bg-blue-600 hover:bg-blue-700 rounded text-xs font-medium"
+            >
+              1080x1920
+              <div className="text-[10px] opacity-80">Full HD Mobile</div>
+            </button>
+          </div>
+          <p className="text-[10px] opacity-70 mb-2">Desktop/Landscape:</p>
+          <div className="flex gap-2">
             <button
               onClick={() => updateConfig({ width: 800, height: 600 })}
               className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs"
@@ -146,22 +177,10 @@ export const ConfigPanel: React.FC = () => {
               800x600
             </button>
             <button
-              onClick={() => updateConfig({ width: 640, height: 960 })}
+              onClick={() => updateConfig({ width: 1024, height: 768 })}
               className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs"
             >
-              640x960
-            </button>
-            <button
-              onClick={() => updateConfig({ width: 320, height: 480 })}
-              className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs"
-            >
-              320x480
-            </button>
-            <button
-              onClick={() => updateConfig({ width: 750, height: 1334 })}
-              className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs"
-            >
-              750x1334
+              1024x768
             </button>
           </div>
         </div>

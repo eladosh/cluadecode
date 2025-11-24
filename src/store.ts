@@ -22,8 +22,8 @@ interface BuilderStore extends EditorState {
 
 const defaultDesign: GameDesign = {
   config: {
-    width: 800,
-    height: 600,
+    width: 640,
+    height: 960,
     backgroundColor: '#1a1a2e',
     title: 'New Playable Ad',
     description: 'Design your game mechanic here',
