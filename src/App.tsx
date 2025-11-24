@@ -1,4 +1,3 @@
-import React from 'react';
 import { Toolbar } from './components/Toolbar';
 import { Canvas } from './components/Canvas';
 import { ElementsPanel } from './components/ElementsPanel';

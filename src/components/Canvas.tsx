@@ -19,8 +19,7 @@ export const Canvas: React.FC = () => {
     showMobileFrame,
     addElement,
     updateElement,
-    selectElement,
-    setPan
+    selectElement
   } = useBuilderStore();
 
   const snapToGrid = (value: number): number => {

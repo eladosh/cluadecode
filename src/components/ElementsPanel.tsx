@@ -1,9 +1,9 @@
 import React from 'react';
-import { Layers, Eye, EyeOff } from 'lucide-react';
+import { Layers, Eye } from 'lucide-react';
 import { useBuilderStore } from '../store';
 
 export const ElementsPanel: React.FC = () => {
-  const { design, selectedElementId, selectElement, deleteElement } = useBuilderStore();
+  const { design, selectedElementId, selectElement } = useBuilderStore();
 
   return (
     <div className="w-64 bg-gray-800 border-r border-gray-700 p-4 overflow-y-auto">

@@ -1,4 +1,5 @@
 import { GameDesign, AnimationType } from '../types';
+import { generateGameMechanics } from './gameMechanics';
 
 const getAnimationCSS = (animation?: AnimationType, duration?: number): string => {
   if (!animation || animation === 'none') return '';
@@ -304,6 +305,9 @@ ${elementsHTML}
       gameScore.textContent = 'Final Score: ' + score;
       gameOverScreen.style.display = 'block';
     }
+
+    // Game-specific mechanics
+    ${generateGameMechanics(design)}
 
     // Add click/touch handlers to interactive elements
     document.querySelectorAll('[data-interactive="true"]').forEach(element => {
