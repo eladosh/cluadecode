@@ -1,0 +1,111 @@
+{
+  "config": {
+    "width": 800,
+    "height": 600,
+    "backgroundColor": "#0f0f1e",
+    "title": "Collection Game",
+    "description": "Collect all the targets to win!"
+  },
+  "elements": [
+    {
+      "id": "element-1",
+      "type": "text",
+      "x": 200,
+      "y": 50,
+      "width": 400,
+      "height": 50,
+      "rotation": 0,
+      "color": "#2196F3",
+      "text": "Collect the Stars!",
+      "fontSize": 28,
+      "isInteractive": false,
+      "action": "none",
+      "zIndex": 10
+    },
+    {
+      "id": "element-2",
+      "type": "target",
+      "x": 100,
+      "y": 200,
+      "width": 80,
+      "height": 80,
+      "rotation": 0,
+      "color": "#FFD700",
+      "isInteractive": true,
+      "action": "score",
+      "scoreValue": 10,
+      "zIndex": 1
+    },
+    {
+      "id": "element-3",
+      "type": "target",
+      "x": 360,
+      "y": 200,
+      "width": 80,
+      "height": 80,
+      "rotation": 0,
+      "color": "#FFD700",
+      "isInteractive": true,
+      "action": "score",
+      "scoreValue": 10,
+      "zIndex": 2
+    },
+    {
+      "id": "element-4",
+      "type": "target",
+      "x": 620,
+      "y": 200,
+      "width": 80,
+      "height": 80,
+      "rotation": 0,
+      "color": "#FFD700",
+      "isInteractive": true,
+      "action": "score",
+      "scoreValue": 10,
+      "zIndex": 3
+    },
+    {
+      "id": "element-5",
+      "type": "target",
+      "x": 230,
+      "y": 380,
+      "width": 80,
+      "height": 80,
+      "rotation": 0,
+      "color": "#FFD700",
+      "isInteractive": true,
+      "action": "score",
+      "scoreValue": 10,
+      "zIndex": 4
+    },
+    {
+      "id": "element-6",
+      "type": "target",
+      "x": 490,
+      "y": 380,
+      "width": 80,
+      "height": 80,
+      "rotation": 0,
+      "color": "#FFD700",
+      "isInteractive": true,
+      "action": "score",
+      "scoreValue": 10,
+      "zIndex": 5
+    },
+    {
+      "id": "element-7",
+      "type": "button",
+      "x": 325,
+      "y": 500,
+      "width": 150,
+      "height": 50,
+      "rotation": 0,
+      "color": "#4CAF50",
+      "text": "Finish!",
+      "fontSize": 18,
+      "isInteractive": true,
+      "action": "win",
+      "zIndex": 6
+    }
+  ]
+}

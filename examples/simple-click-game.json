@@ -1,0 +1,67 @@
+{
+  "config": {
+    "width": 800,
+    "height": 600,
+    "backgroundColor": "#1a1a2e",
+    "title": "Simple Click Game",
+    "description": "Click the green button to win!"
+  },
+  "elements": [
+    {
+      "id": "element-1",
+      "type": "text",
+      "x": 250,
+      "y": 100,
+      "width": 300,
+      "height": 50,
+      "rotation": 0,
+      "color": "#2196F3",
+      "text": "Click the button to win!",
+      "fontSize": 24,
+      "isInteractive": false,
+      "action": "none",
+      "zIndex": 1
+    },
+    {
+      "id": "element-2",
+      "type": "button",
+      "x": 325,
+      "y": 250,
+      "width": 150,
+      "height": 60,
+      "rotation": 0,
+      "color": "#4CAF50",
+      "text": "Play Now!",
+      "fontSize": 20,
+      "isInteractive": true,
+      "action": "win",
+      "zIndex": 2
+    },
+    {
+      "id": "element-3",
+      "type": "circle",
+      "x": 50,
+      "y": 400,
+      "width": 80,
+      "height": 80,
+      "rotation": 0,
+      "color": "#FF9800",
+      "isInteractive": false,
+      "action": "none",
+      "zIndex": 0
+    },
+    {
+      "id": "element-4",
+      "type": "circle",
+      "x": 670,
+      "y": 400,
+      "width": 80,
+      "height": 80,
+      "rotation": 0,
+      "color": "#FF9800",
+      "isInteractive": false,
+      "action": "none",
+      "zIndex": 0
+    }
+  ]
+}
