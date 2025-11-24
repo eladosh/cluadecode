@@ -5,6 +5,7 @@ import { ElementsPanel } from './components/ElementsPanel';
 import { PropertiesPanel } from './components/PropertiesPanel';
 import { ConfigPanel } from './components/ConfigPanel';
 import { TemplatesPanel } from './components/TemplatesPanel';
+import { NetworkSelector } from './components/NetworkSelector';
 import { useBuilderStore } from './store';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       </div>
 
       <TemplatesPanel />
+      <NetworkSelector />
       <ConfigPanel />
 
       <footer className="bg-gray-800 border-t border-gray-700 px-6 py-2 text-sm text-gray-400">
