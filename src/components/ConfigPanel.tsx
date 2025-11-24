@@ -81,8 +81,63 @@ export const ConfigPanel: React.FC = () => {
           />
         </div>
 
+        <div className="pt-2 border-t border-gray-700">
+          <h4 className="text-sm font-medium mb-2">Playable Ad Settings</h4>
+
+          <div className="space-y-3">
+            <div>
+              <label className="block text-sm font-medium mb-1">CTA Button Text</label>
+              <input
+                type="text"
+                value={design.config.ctaText || ''}
+                onChange={(e) => updateConfig({ ctaText: e.target.value })}
+                placeholder="Download Now"
+                className="w-full px-3 py-2 bg-gray-700 rounded text-sm"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-1">App Store URL</label>
+              <input
+                type="text"
+                value={design.config.ctaUrl || ''}
+                onChange={(e) => updateConfig({ ctaUrl: e.target.value })}
+                placeholder="https://apps.apple.com/..."
+                className="w-full px-3 py-2 bg-gray-700 rounded text-sm"
+              />
+            </div>
+
+            <div className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                id="snapToGrid"
+                checked={design.config.snapToGrid || false}
+                onChange={(e) => updateConfig({ snapToGrid: e.target.checked })}
+                className="w-4 h-4"
+              />
+              <label htmlFor="snapToGrid" className="text-sm font-medium">
+                Snap to Grid
+              </label>
+            </div>
+
+            {design.config.snapToGrid && (
+              <div>
+                <label className="block text-sm font-medium mb-1">Grid Size (px)</label>
+                <input
+                  type="number"
+                  value={design.config.gridSize || 20}
+                  onChange={(e) => updateConfig({ gridSize: Number(e.target.value) })}
+                  min="5"
+                  max="50"
+                  className="w-full px-3 py-2 bg-gray-700 rounded text-sm"
+                />
+              </div>
+            )}
+          </div>
+        </div>
+
         <div className="pt-2 border-t border-gray-700 text-xs text-gray-400">
-          <p>💡 Tip: Common ad sizes:</p>
+          <p>📱 Common playable ad sizes:</p>
           <div className="flex gap-2 mt-2 flex-wrap">
             <button
               onClick={() => updateConfig({ width: 800, height: 600 })}
@@ -91,16 +146,22 @@ export const ConfigPanel: React.FC = () => {
               800x600
             </button>
             <button
-              onClick={() => updateConfig({ width: 1024, height: 768 })}
+              onClick={() => updateConfig({ width: 640, height: 960 })}
               className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs"
             >
-              1024x768
+              640x960
             </button>
             <button
               onClick={() => updateConfig({ width: 320, height: 480 })}
               className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs"
             >
               320x480
+            </button>
+            <button
+              onClick={() => updateConfig({ width: 750, height: 1334 })}
+              className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs"
+            >
+              750x1334
             </button>
           </div>
         </div>

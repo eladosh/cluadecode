@@ -5,7 +5,10 @@ export type ElementType =
   | 'image'
   | 'text'
   | 'rectangle'
-  | 'circle';
+  | 'circle'
+  | 'cta';
+
+export type AnimationType = 'none' | 'bounce' | 'pulse' | 'shake' | 'float' | 'spin' | 'glow';
 
 export interface GameElement {
   id: string;
@@ -20,9 +23,13 @@ export interface GameElement {
   fontSize?: number;
   imageUrl?: string;
   isInteractive: boolean;
-  action?: 'win' | 'lose' | 'score' | 'none';
+  action?: 'win' | 'lose' | 'score' | 'cta' | 'none';
   scoreValue?: number;
   zIndex: number;
+  animation?: AnimationType;
+  animationDuration?: number;
+  ctaLink?: string;
+  opacity?: number;
 }
 
 export interface GameConfig {
@@ -31,6 +38,12 @@ export interface GameConfig {
   backgroundColor: string;
   title: string;
   description: string;
+  ctaText?: string;
+  ctaUrl?: string;
+  showTimer?: boolean;
+  timerDuration?: number;
+  gridSize?: number;
+  snapToGrid?: boolean;
 }
 
 export interface GameDesign {
@@ -47,4 +60,15 @@ export interface EditorState {
   isPreviewMode: boolean;
   zoom: number;
   pan: { x: number; y: number };
+  showGrid: boolean;
+  showMobileFrame: boolean;
+}
+
+export interface PlayableAdTemplate {
+  id: string;
+  name: string;
+  description: string;
+  category: 'casual' | 'puzzle' | 'action' | 'arcade';
+  thumbnail?: string;
+  design: GameDesign;
 }

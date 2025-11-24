@@ -14,19 +14,35 @@ import {
   Download,
   Upload,
   RotateCcw,
-  FileCode
+  FileCode,
+  Grid3x3,
+  Smartphone,
+  ExternalLink
 } from 'lucide-react';
 import { useBuilderStore } from '../store';
 import { Tool } from '../types';
 import { downloadPlayableHTML } from '../utils/export';
 
 export const Toolbar: React.FC = () => {
-  const { currentTool, setTool, togglePreview, isPreviewMode, zoom, setZoom, resetDesign } = useBuilderStore();
+  const {
+    currentTool,
+    setTool,
+    togglePreview,
+    isPreviewMode,
+    zoom,
+    setZoom,
+    resetDesign,
+    showGrid,
+    showMobileFrame,
+    toggleGrid,
+    toggleMobileFrame
+  } = useBuilderStore();
 
   const tools: { id: Tool; icon: React.ReactNode; label: string }[] = [
     { id: 'select', icon: <MousePointer2 size={20} />, label: 'Select' },
     { id: 'pan', icon: <Hand size={20} />, label: 'Pan' },
     { id: 'button', icon: <Square size={20} />, label: 'Button' },
+    { id: 'cta', icon: <ExternalLink size={20} />, label: 'CTA Button' },
     { id: 'target', icon: <Target size={20} />, label: 'Target' },
     { id: 'obstacle', icon: <XCircle size={20} />, label: 'Obstacle' },
     { id: 'rectangle', icon: <Square size={20} />, label: 'Rectangle' },
@@ -125,6 +141,27 @@ export const Toolbar: React.FC = () => {
         >
           <Play size={20} />
           <span className="text-sm">{isPreviewMode ? 'Exit Preview' : 'Preview'}</span>
+        </button>
+      </div>
+
+      <div className="flex gap-1 border-r border-gray-600 pr-2">
+        <button
+          onClick={toggleGrid}
+          className={`p-2 rounded hover:bg-gray-600 transition-colors ${
+            showGrid ? 'bg-blue-600' : 'bg-gray-700'
+          }`}
+          title="Toggle Grid"
+        >
+          <Grid3x3 size={20} />
+        </button>
+        <button
+          onClick={toggleMobileFrame}
+          className={`p-2 rounded hover:bg-gray-600 transition-colors ${
+            showMobileFrame ? 'bg-blue-600' : 'bg-gray-700'
+          }`}
+          title="Toggle Mobile Frame"
+        >
+          <Smartphone size={20} />
         </button>
       </div>
 

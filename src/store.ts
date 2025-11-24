@@ -16,6 +16,8 @@ interface BuilderStore extends EditorState {
   duplicateElement: (id: string) => void;
   moveElementUp: (id: string) => void;
   moveElementDown: (id: string) => void;
+  toggleGrid: () => void;
+  toggleMobileFrame: () => void;
 }
 
 const defaultDesign: GameDesign = {
@@ -24,7 +26,11 @@ const defaultDesign: GameDesign = {
     height: 600,
     backgroundColor: '#1a1a2e',
     title: 'New Playable Ad',
-    description: 'Design your game mechanic here'
+    description: 'Design your game mechanic here',
+    ctaText: 'Download Now',
+    ctaUrl: '',
+    snapToGrid: false,
+    gridSize: 20
   },
   elements: []
 };
@@ -36,6 +42,8 @@ export const useBuilderStore = create<BuilderStore>((set, get) => ({
   isPreviewMode: false,
   zoom: 1,
   pan: { x: 0, y: 0 },
+  showGrid: false,
+  showMobileFrame: false,
 
   addElement: (element) => {
     const maxZIndex = Math.max(0, ...get().design.elements.map(e => e.zIndex));
@@ -163,5 +171,13 @@ export const useBuilderStore = create<BuilderStore>((set, get) => ({
         design: { ...state.design, elements: newElements }
       }));
     }
+  },
+
+  toggleGrid: () => {
+    set((state) => ({ showGrid: !state.showGrid }));
+  },
+
+  toggleMobileFrame: () => {
+    set((state) => ({ showMobileFrame: !state.showMobileFrame }));
   }
 }));

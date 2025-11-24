@@ -115,7 +115,21 @@ export const PropertiesPanel: React.FC = () => {
           />
         </div>
 
-        {(selectedElement.type === 'text' || selectedElement.type === 'button') && (
+        <div>
+          <label className="block text-sm font-medium mb-1">Opacity</label>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.1"
+            value={selectedElement.opacity ?? 1}
+            onChange={(e) => updateElement(selectedElement.id, { opacity: Number(e.target.value) })}
+            className="w-full"
+          />
+          <div className="text-sm text-gray-400 text-center">{((selectedElement.opacity ?? 1) * 100).toFixed(0)}%</div>
+        </div>
+
+        {(selectedElement.type === 'text' || selectedElement.type === 'button' || selectedElement.type === 'cta') && (
           <>
             <div>
               <label className="block text-sm font-medium mb-1">Text</label>
@@ -176,6 +190,7 @@ export const PropertiesPanel: React.FC = () => {
               <option value="win">Win</option>
               <option value="lose">Lose</option>
               <option value="score">Score</option>
+              <option value="cta">Call-to-Action</option>
             </select>
           </div>
         )}
@@ -187,6 +202,51 @@ export const PropertiesPanel: React.FC = () => {
               type="number"
               value={selectedElement.scoreValue || 0}
               onChange={(e) => updateElement(selectedElement.id, { scoreValue: Number(e.target.value) })}
+              className="w-full px-3 py-2 bg-gray-700 rounded text-sm"
+            />
+          </div>
+        )}
+
+        {selectedElement.action === 'cta' && (
+          <div>
+            <label className="block text-sm font-medium mb-1">CTA Link (App Store URL)</label>
+            <input
+              type="text"
+              value={selectedElement.ctaLink || ''}
+              onChange={(e) => updateElement(selectedElement.id, { ctaLink: e.target.value })}
+              placeholder="https://apps.apple.com/..."
+              className="w-full px-3 py-2 bg-gray-700 rounded text-sm"
+            />
+          </div>
+        )}
+
+        <div>
+          <label className="block text-sm font-medium mb-1">Animation</label>
+          <select
+            value={selectedElement.animation || 'none'}
+            onChange={(e) => updateElement(selectedElement.id, { animation: e.target.value as any })}
+            className="w-full px-3 py-2 bg-gray-700 rounded text-sm"
+          >
+            <option value="none">None</option>
+            <option value="bounce">Bounce</option>
+            <option value="pulse">Pulse</option>
+            <option value="shake">Shake</option>
+            <option value="float">Float</option>
+            <option value="spin">Spin</option>
+            <option value="glow">Glow</option>
+          </select>
+        </div>
+
+        {selectedElement.animation && selectedElement.animation !== 'none' && (
+          <div>
+            <label className="block text-sm font-medium mb-1">Animation Duration (seconds)</label>
+            <input
+              type="number"
+              min="0.5"
+              max="10"
+              step="0.5"
+              value={selectedElement.animationDuration || 2}
+              onChange={(e) => updateElement(selectedElement.id, { animationDuration: Number(e.target.value) })}
               className="w-full px-3 py-2 bg-gray-700 rounded text-sm"
             />
           </div>
